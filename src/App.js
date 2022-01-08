@@ -33,9 +33,16 @@ export default class App extends React.Component {
   }
   render() {
     const { users, children } = this.state;
-
+    const data = this.state.users;
+    const dataChildren = this.state.children;
+    const listItems = data.map((d) => <li key={d.name}>{d.name}</li>);
+    // const listItems2 = dataChildren.map(() => <li key={d.name}>{d.name}</li>);
     return (
       <div>
+              <div>
+      {listItems}
+      {/* {listItems2} */}
+      </div>
         <h1>React aplikacija</h1>
         <p>Ovo zbilja radi</p>
         <input type="text"  placeholder={users[0].name} onChange={this.handleChange} />
